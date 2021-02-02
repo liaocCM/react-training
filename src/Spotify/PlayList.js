@@ -1,7 +1,10 @@
 import React, { Component, useEffect, useState } from "react";
 import { Spin } from "antd";
 
+import { Spinner } from "./Loading";
+
 import "./index.css";
+import styles from "./index.module.css";
 
 const Playlist = () => {
   const [song, setSong] = useState();
@@ -20,24 +23,17 @@ const Playlist = () => {
   }, []);
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       {!song ? (
-        <div style={{ color: "white" }}>
-          LOADING
-          <Spin />
-        </div>
+        <Spinner />
       ) : (
         song.items.map((e, index) => (
-          <div className="list">
+          <div className={styles.list}>
             <div className="index">{index + 1}</div>
             <img src={e.images[1].url}></img>
             <div className="textArea">
-              <div>
-                <span className="song">{e.name}</span>
-              </div>
-              <div>
-                <span className="artist">{e.artists[0].name}</span>
-              </div>
+              <div className="song">{e.name}</div>
+              <div className="artist">{e.artists[0].name}</div>
             </div>
           </div>
         ))
