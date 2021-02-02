@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "antd";
 
-class Example1 extends Component {
+class ExampleA extends Component {
   state = {
     name: "Example",
     count: 0,
@@ -48,4 +48,4 @@ class Example1 extends Component {
   }
 }
 
-export default Example1;
+export default ExampleA;
