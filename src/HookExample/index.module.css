@@ -1,0 +1,9 @@
+.lifeCycleWrapper {
+  min-height: 300px;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+.toggleBtn {
+  margin-right: 10px;
+}

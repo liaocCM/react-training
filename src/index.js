@@ -1,7 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./index.css";
-import "antd/dist/antd.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import PlayList from './Homework/_Example';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import './index.css';
+import 'antd/dist/antd.css';
+
+ReactDOM.render(<PlayList />, document.getElementById('root'));

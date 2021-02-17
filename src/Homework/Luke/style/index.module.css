@@ -5,17 +5,12 @@
 }
 
 .list {
-  /* border: 1px solid #ababab; */
   color: #fff;
   display: flex;
   align-items: center;
   font-size: 16px;
   clear: both;
 }
-
-/* .list:not(:last-child) {
-  margin-bottom: 4px;
-} */
 
 .list img {
   height: 40px;
@@ -34,4 +29,14 @@
 .artist {
   color: #b3b3b3;
   font-size: 14px;
+}
+
+
+.tb{
+  color: #b3b3b3;
+}
+
+.tb > tbody > tr > td > img{
+  height: 40px;
+  width: 40px;
 }
