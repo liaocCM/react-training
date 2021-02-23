@@ -1,0 +1,91 @@
+@mixin subtitle {
+  color: #b3b3b3;
+  font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.container {
+  isolation: isolate;
+  background-color: #121212;
+  color: #fff;
+  min-height: 100vh;
+  .background-mask {
+    position: absolute;
+    height: 230px;
+    width: 100%;
+    background-color: #c1c1ca;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+    z-index: -1;
+  }
+}
+
+.song-table {
+  padding: 24px;
+  &-list {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 0 16px;
+    transition: background-color 0.5s;
+    &:hover,
+    &.select {
+      div {
+        color: #fff;
+      }
+    }
+    &:hover {
+      background-color: #ffffff1a;
+    }
+    &.select {
+      background-color: #ffffff4d;
+    }
+
+    div:not(:last-child) {
+      margin-right: 14px;
+    }
+    &-index {
+      color: #b3b3b3;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      width: 24px;
+    }
+    &-title {
+      display: flex;
+      align-items: center;
+      width: 40%;
+      margin: 4px 0;
+      img {
+        height: 40px;
+        width: 40px;
+        margin: 0 12px 0;
+      }
+    }
+    &-album {
+      @include subtitle;
+      @include text-ellipsis;
+      width: 20%;
+    }
+  }
+}
+
+.song-desc {
+  overflow: hidden;
+  &-name,
+  &-artist {
+    @include text-ellipsis;
+  }
+  &-artist {
+    @include subtitle;
+  }
+}

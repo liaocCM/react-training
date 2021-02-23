@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import PlayList from './Homework/_Example';
+import PlayList from './Homework/Tex';
+// import App from './App';
 
 import './index.css';
 import 'antd/dist/antd.css';

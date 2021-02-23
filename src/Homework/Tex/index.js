@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { Spinner } from './components/Loading';
-import './style/index.css';
+import { Loading, SongTable } from './components';
+import './style/index.scss';
 
 const Playlist = () => {
   const [song, setSong] = useState();
@@ -19,28 +19,18 @@ const Playlist = () => {
 
   if (!song)
     return (
-      <div className="wrapper">
-        <Spinner />
+      <div className="container">
+        <Loading />
       </div>
     );
 
   return (
-    <div className="wrapper">
-      {song.map((songItem, index) => (
-        <div className="list">
-          <div className="index">{index + 1}</div>
-          <div className="songWrapper">
-            <img src={songItem.track.album.images[1].url}></img>
-            <div className="desc">
-              <div className="song">{songItem.track.name}</div>
-              <div className="artist">
-                {songItem.track.album.artists[0].name}
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+    <React.Fragment>
+      <div className="container">
+        <div className="background-mask" />
+        <SongTable songData={song} />
+      </div>
+    </React.Fragment>
   );
 };
 

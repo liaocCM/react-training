@@ -1,6 +1,6 @@
 import { Spin } from 'antd';
 
-export const Spinner = ({ tip }) => {
+const Loading = ({ tip }) => {
   return (
     <div
       style={{
@@ -15,3 +15,5 @@ export const Spinner = ({ tip }) => {
     </div>
   );
 };
+
+export default Loading;
