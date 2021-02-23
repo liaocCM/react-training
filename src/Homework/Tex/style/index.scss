@@ -33,13 +33,16 @@
   &-list {
     display: flex;
     align-items: center;
+    cursor: default;
     font-size: 16px;
     border-radius: 5px;
     padding: 0 16px;
     transition: background-color 0.5s;
     &:hover,
     &.select {
-      div {
+      div,
+      span,
+      a {
         color: #fff;
       }
     }
@@ -53,6 +56,7 @@
     div:not(:last-child) {
       margin-right: 14px;
     }
+
     &-index {
       color: #b3b3b3;
       text-align: center;
@@ -72,9 +76,20 @@
       }
     }
     &-album {
+      @include text-ellipsis;
+      width: 30%;
+      a {
+        @include subtitle;
+      }
+    }
+    &-duration {
       @include subtitle;
       @include text-ellipsis;
       width: 20%;
+      cursor: default;
+      &:hover {
+        text-decoration: unset;
+      }
     }
   }
 }
@@ -86,6 +101,8 @@
     @include text-ellipsis;
   }
   &-artist {
-    @include subtitle;
+    a {
+      @include subtitle;
+    }
   }
 }
