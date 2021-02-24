@@ -1,11 +1,13 @@
 $spacing: 14px;
 
-@mixin subtitle {
+@mixin subtitle($isLink: true) {
   color: #b3b3b3;
   font-size: 14px;
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
+  @if ($isLink) {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -27,6 +29,38 @@ $spacing: 14px;
     background-color: #c1c1ca;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
     z-index: -1;
+  }
+}
+
+.song-table-header {
+  padding: 0 16px 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid gray;
+  display: flex;
+
+  div:not(:first-child):not(:last-child) {
+    margin-right: $spacing;
+  }
+
+  &-index {
+    color: #b3b3b3;
+    width: 24px;
+    padding-right: $spacing;
+  }
+
+  &-title {
+    @include subtitle(false);
+    width: 30%;
+    min-width: 150px;    
+  }
+
+  &-album {
+    @include subtitle(false);
+    width: 30%;
+  }
+  &-duration {
+    @include subtitle(false);
+    width: 30%;
   }
 }
 
@@ -70,7 +104,7 @@ $spacing: 14px;
     &-title {
       display: flex;
       align-items: center;
-      width: 40%;
+      width: 30%;
       min-width: 150px;
       margin: 4px 0;
       img {
@@ -87,13 +121,9 @@ $spacing: 14px;
       }
     }
     &-duration {
-      @include subtitle;
+      @include subtitle(false);
       @include text-ellipsis;
       width: 30%;
-      cursor: default;
-      &:hover {
-        text-decoration: unset;
-      }
     }
   }
 }
